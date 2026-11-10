@@ -289,16 +289,20 @@ st.info("""
 3. **Optimiza el corte:** Sube el archivo SVG descargado aquí abajo para anidar las piezas automáticamente en Python con mínimo desperdicio.
 """)
 
-col_link1, col_link2 = st.columns(2)
+col_link1, col_link2, col_link3 = st.columns(3)
 with col_link1:
-    st.link_button("1️⃣ Diseñar Banco Tronco 3D", "https://efe-design.web.app/apps/banco-tronco", use_container_width=True)
+    st.link_button("1️⃣ Diseñar Banco 3D", "https://efe-design.web.app/apps/banco-tronco", use_container_width=True)
 with col_link2:
-    st.link_button("2️⃣ Abrir Panel de Taller (Descargar SVG)", "https://efe-design.web.app/apps/taller", use_container_width=True)
+    st.link_button("2️⃣ Descargar SVG (Taller)", "https://efe-design.web.app/apps/taller", use_container_width=True)
+with col_link3:
+    st.link_button("📖 Ver README y Código", "https://github.com/lpqlp1/nesting#readme", use_container_width=True)
 
 st.divider()
 
 with st.sidebar:
     st.header("⚙️ Parámetros de Mesa")
+    st.markdown("[📖 Documentación técnica (README)](https://github.com/lpqlp1/nesting#readme)")
+    st.divider()
     ancho_mesa = st.number_input("Ancho Lámina (mm)", min_value=300.0, max_value=3000.0, value=1200.0, step=50.0)
     alto_mesa = st.number_input("Alto Lámina (mm)", min_value=300.0, max_value=3000.0, value=800.0, step=50.0)
     kerf = st.slider("Kerf / Holgura (mm)", min_value=1.0, max_value=15.0, value=5.0, step=0.5)
