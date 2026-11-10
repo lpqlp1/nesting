@@ -276,8 +276,26 @@ def generar_svg_string(laminas, ancho_mesa=1200.0, alto_mesa=800.0, sep=100.0):
     lineas.append('</svg>')
     return "\n".join(lineas)
 
+# -------------------------------------------------------------
+# 3. INTERFAZ STREAMLIT
+# -------------------------------------------------------------
 st.title("🪑 Nesting Topográfico Multi-Lámina (eFe-Design)")
-st.markdown("Herramienta de optimización y despiece paramétrico para corte láser y fresado CNC.")
+st.markdown("Herramienta de optimización y despiece paramétrico para corte láser y mecanizado CNC.")
+
+st.info("""
+**Instrucciones de uso:**
+1. **Diseña tu banco:** Ingresa a la plataforma y personaliza las dimensiones y ondas de tu pieza.
+2. **Descarga el SVG:** Genera el despiece vectorial en el panel de taller y descárgalo a tu computador.
+3. **Optimiza el corte:** Sube el archivo SVG descargado aquí abajo para anidar las piezas automáticamente en Python con mínimo desperdicio.
+""")
+
+col_link1, col_link2 = st.columns(2)
+with col_link1:
+    st.link_button("1️⃣ Diseñar Banco Tronco 3D", "https://efe-design.web.app/apps/banco-tronco", use_container_width=True)
+with col_link2:
+    st.link_button("2️⃣ Abrir Panel de Taller (Descargar SVG)", "https://efe-design.web.app/apps/taller", use_container_width=True)
+
+st.divider()
 
 with st.sidebar:
     st.header("⚙️ Parámetros de Mesa")
